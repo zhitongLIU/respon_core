@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+Bundler.require
+require 'cli'
+require 'pry'
+Dotenv.load
+
+# binding.pry
+Cli.start(ARGV)

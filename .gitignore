@@ -1,0 +1,17 @@
+/*
+/.bundle/config
+!/concepts/
+!/formators/
+!/lib/
+!.git/
+!.gitignore
+!Gemfile
+!Gemfile.lock
+!respon_core.gemspec
+!CODE_OF_CONDUCT.md
+!.travis.yml
+!LICENSE.txt
+!Rakefile
+!/spec/
+!README.md
+!/bin/
