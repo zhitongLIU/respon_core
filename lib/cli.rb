@@ -28,7 +28,7 @@ class Cli < Thor
     if options.json?
       pp results
     else
-      puts ResponCore::Formators::Cli::PullRequests::RemainRequests.format(results)
+      puts ResponCore::Formatters::Cli::PullRequests::RemainRequests.format(results)
     end
   end
 
@@ -52,7 +52,7 @@ class Cli < Thor
     if options.json?
       pp results
     else
-      puts ResponCore::Formators::Cli::PullRequests::ReviewsEfficiency.format(results)
+      puts ResponCore::Formatters::Cli::PullRequests::ReviewsEfficiency.format(results)
     end
   end
 
@@ -78,7 +78,7 @@ class Cli < Thor
       results.each do |record|
         record.each do |repo, result|
           puts "assigne reviewer for #{repo}"
-          puts ResponCore::Formators::Cli::PullRequests::RemainRequests.format(result)
+          puts ResponCore::Formatters::Cli::PullRequests::RemainRequests.format(result)
         end
       end
     end

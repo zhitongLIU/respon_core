@@ -3,6 +3,7 @@
 
 require 'bundler/setup'
 Bundler.require
+require 'respon_core'
 require 'cli'
 require 'pry'
 Dotenv.load

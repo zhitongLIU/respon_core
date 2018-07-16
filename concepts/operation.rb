@@ -4,7 +4,7 @@ module ResponCore
   module PullRequests
     # operation to give reviewers of pull requests
     class Operation
-      attr_accessor :params, :errors, :parameters, :errors
+      attr_accessor :params, :errors, :parameters
 
       def initialize(*args)
         args = args.first
