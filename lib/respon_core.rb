@@ -9,4 +9,4 @@ end
 Dir['./concepts/*.rb'].each { |f| require f }
 Dir['./concepts/**/*.rb'].each { |f| require f }
 Dir['./lib/**/*.rb'].each { |f| require f }
-Dir['./formators/**/*.rb'].each { |f| require f }
+Dir['./formatters/**/*.rb'].each { |f| require f }
