@@ -38,7 +38,7 @@ module ResponCore
       def fill_info(repo, pull_request)
         {
           title: pull_request[:title],
-          url: pull_request[:url],
+          url: pull_request[:html_url],
           repo: repo,
           number: pull_request[:number],
           last_update: "#{(@now - pull_request[:updated_at]).to_i / 86_400} days ago"

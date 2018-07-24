@@ -16,6 +16,7 @@ class Cli < Thor
   method_options pr_count: :numeric
   method_options github: :boolean
   method_options connectors: :array
+  method_options display_url: :boolean
   def remain_pull_requests
     repo_list = options.repos || REPOS
     client = connector(options)
@@ -28,7 +29,7 @@ class Cli < Thor
     if options.json?
       pp results
     else
-      puts ResponCore::Formatters::Cli::PullRequests::RemainRequests.format(results)
+      puts ResponCore::Formatters::Cli::PullRequests::RemainRequests.format(results, display_url: options.display_url)
     end
   end
 
@@ -40,6 +41,7 @@ class Cli < Thor
   method_options pr_count: :numeric
   method_options github: :boolean
   method_options connectors: :array
+  method_options display_url: :boolean
   def reviews_efficiency
     repo_list = options.repos || REPOS
     client = connector(options)
@@ -52,7 +54,7 @@ class Cli < Thor
     if options.json?
       pp results
     else
-      puts ResponCore::Formatters::Cli::PullRequests::ReviewsEfficiency.format(results)
+      puts ResponCore::Formatters::Cli::PullRequests::ReviewsEfficiency.format(results, display_url: options.display_url)
     end
   end
 
@@ -66,6 +68,7 @@ class Cli < Thor
   method_options connectors: :array
   method_options pull_requests: :array
   method_options mode: :string
+  method_options display_url: :boolean
   def shuffle_requests_reviewer
     repo_list = options.repos || REPOS
     client = connector(options)
@@ -78,7 +81,7 @@ class Cli < Thor
       results.each do |record|
         record.each do |repo, result|
           puts "assigne reviewer for #{repo}"
-          puts ResponCore::Formatters::Cli::PullRequests::RemainRequests.format(result)
+          puts ResponCore::Formatters::Cli::PullRequests::RemainRequests.format(result, display_url: options.display_url)
         end
       end
     end

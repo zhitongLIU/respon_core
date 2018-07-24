@@ -6,8 +6,9 @@ module ResponCore
       module PullRequests
         # operation to give reviewers of pull requests
         module RemainRequests
-          def self.format(results)
+          def self.format(results, display_url: true)
             rows = [%w[Name count repo pull_request due_date]]
+            rows.first << 'url' if display_url
             rows << :separator
             results.each do |reviewer, records|
               res = []
@@ -18,6 +19,7 @@ module ResponCore
                 res << "#{record[:repo]}:#{record[:number]}"
                 res << record[:title].truncate(50).to_s
                 res << record[:last_update]
+                res << record[:url] if display_url
                 rows << res
                 res = []
               end

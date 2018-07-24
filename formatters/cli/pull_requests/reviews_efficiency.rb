@@ -6,8 +6,9 @@ module ResponCore
       module PullRequests
         # operation to give reviewers of pull requests
         module ReviewsEfficiency
-          def self.format(results)
+          def self.format(results, display_url: true)
             rows = [%w[Name count total_time_for_approve average_time_per_approve repo pull_request time_for_approved]]
+            rows.first << 'url' if display_url
             rows << :separator
             results.each do |reviewer, records|
               res = []
@@ -22,6 +23,7 @@ module ResponCore
                 res << "#{record[:repo]}:#{record[:number]}"
                 res << record[:title].truncate(50).to_s
                 res << record[:time_for_approved]
+                res << record[:url] if display_url
                 rows << res
                 res = []
               end

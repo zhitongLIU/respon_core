@@ -37,7 +37,7 @@ module ResponCore
       def fill_info(repo, pull_request, review)
         {
           title: pull_request[:title],
-          url: pull_request[:url],
+          url: pull_request[:html_url],
           repo: repo,
           number: pull_request[:number],
           time_for_approved: ((review[:submitted_at] - pull_request.created_at) / 3600.0).round(2)
