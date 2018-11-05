@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'core gem for respon'
   spec.description   = 'core gem for respon'
-  spec.homepage      = 'http://www.google.com'
+  spec.homepage      = 'https://github.com/zhitongLIU/respon_core'
   spec.license       = 'MIT'
 
   spec.bindir = 'bin'
@@ -21,23 +21,29 @@ Gem::Specification.new do |spec|
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "'http://mygemserver.com'"
-  else
-    raise 'RubyGems 2.0 or newer is required to protect against ' \
-      'public gem pushes.'
-  end
+  # if spec.respond_to?(:metadata)
+  #   spec.metadata['allowed_push_host'] = "'http://mygemserver.com'"
+  # else
+  #   raise 'RubyGems 2.0 or newer is required to protect against ' \
+  #     'public gem pushes.'
+  # end
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.files += %w[CONTRIBUTING.md LICENSE.md README.md respon_core.gemspec Rakefile]
+  spec.files += %w[LICENSE.txt README.md respon_core.gemspec Rakefile]
   spec.files += Dir.glob('lib/**/*.rb')
   spec.files += Dir.glob('concepts/**/*.rb')
 
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = %w[lib concepts]
+
+  spec.add_dependency 'dry-validation', '~> 0.12.1'
+  spec.add_dependency 'octokit', '~> 4.0'
+  spec.add_dependency 'rugged', '~> 0.27.2'
+  spec.add_dependency 'terminal-table', '~> 1.8'
+  spec.add_dependency 'thor', '~> 0.20.0'
 
   spec.add_development_dependency 'bundler', '~> 1.16'
   spec.add_development_dependency 'rake', '~> 10.0'
