@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    respon_core (0.1.0)
+    respon_core (0.1.1)
       dry-validation (~> 0.12.1)
       octokit (~> 4.0)
       rugged (~> 0.27.2)
