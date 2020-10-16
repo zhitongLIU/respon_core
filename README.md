@@ -21,9 +21,9 @@ Or install it yourself as:
 
 ## Usage
 
-###Github token Auth
+### Github token Auth
 
-Create .env file, and put a github access token with repos&user read rights
+Create a `.env` file, and put a github access token with repos&user read rights
 ```
 GITHUB_ACCESS_TOKEN=xxxxxxx
 ```
@@ -60,7 +60,7 @@ Show team members last 100(default) closed pr average time for reviews after a P
 ./exe/respon_core -eff --repos oner/repo_name
 ```
 
-####Example
+#### Example
 
 ```
  ./exe/respon_core -eff --repos rails/rails --display_url
@@ -195,7 +195,8 @@ seems in rails/rails if your PR is assigned to `eugeneius` or `tgxworld` your pr
 
 #### -pr
 Show open PR that waiting for reviews
-Example
+
+#### Example
 ```
  ./exe/respon_core -pr --repos rails/rails --display_url
 processing repo rails/rails
