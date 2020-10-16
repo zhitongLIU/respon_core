@@ -66,7 +66,7 @@ GEM
       pry (~> 0.13.0)
     public_suffix (4.0.6)
     rainbow (3.0.0)
-    rake (10.5.0)
+    rake (13.0.1)
     regexp_parser (1.8.2)
     rexml (3.2.4)
     rspec (3.9.0)
@@ -113,7 +113,7 @@ DEPENDENCIES
   octokit (~> 4.0)
   pry
   pry-byebug
-  rake (~> 10.0)
+  rake (~> 13.0)
   respon_core!
   rspec
   rubocop
