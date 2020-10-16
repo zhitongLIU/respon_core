@@ -8,7 +8,7 @@ class Cli < Thor
   map '-eff' => :reviews_efficiency
   map '-shuffle' => :shuffle_requests_reviewer
 
-  desc 'list repo pull request', 'list user pull request'
+  desc '-pr', 'list user pull request, options: --json, --user xxx, --repos xxx/yyy zzz/aaa, --github, --display_url'
   method_options json: :boolean
   method_options user: :string
   method_options repos: :array
@@ -33,7 +33,7 @@ class Cli < Thor
     end
   end
 
-  desc 'list repo closed pull request reviews', 'list user pull request reviewers states'
+  desc '-eff', 'list user pull request reviewers states, options: --json, --user xxx, --repos xxx/yyy zzz/aaa, --github, --display_url'
   method_options json: :boolean
   method_options user: :string
   method_options repos: :array
@@ -58,7 +58,7 @@ class Cli < Thor
     end
   end
 
-  desc 'shuffle request reviewer', 'shuffle request reviewer'
+  desc '-shuffle', 'shuffle request reviewer, options: --json, --user xxx, --repos xxx/yyy zzz/aaa, --github, --display_url'
   method_options json: :boolean
   method_options repos: :array
   method_options pr_count: :numeric
